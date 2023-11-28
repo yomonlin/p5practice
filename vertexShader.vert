@@ -1,3 +1,6 @@
+// vertexShader 會跑過每一個頂點
+// 決定形狀
+
 //設定畫面精確度為高
 precision highp float;
 

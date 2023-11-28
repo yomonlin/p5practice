@@ -20,4 +20,7 @@ function setup() {
 function draw() {
   shader(myShader)
   rect(0, 0, width, height)
+
+  // 傳給 shader 的參數
+  myShader.setUniform("u_resolution", [windowWidth, windowHeight])
 }

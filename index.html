@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cht">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
   <title>Shader 練習</title>
+  <style>
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      width: 33vw;
+      height: 50vh;
+      border: 0;
+    }
+  </style>
 </head>
 
 <body>
-  <iframe src="./practices/gradient" frameborder="0"></iframe>
-  <iframe src="./practices/halo" frameborder="0"></iframe>
+  <div>
+    <iframe src="./practices/gradient" frameborder="0"></iframe>
+    <iframe src="./practices/halo" frameborder="0"></iframe>
+    <iframe src="./practices/distortion" frameborder="0"></iframe>
+    <iframe src="./practices/time" frameborder="0"></iframe>
+  </div>
 </body>
 
 </html>

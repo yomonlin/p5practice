@@ -18,13 +18,7 @@ uniform vec2 uResolution;
 
 void main() {
 
-  float distortValue = texture2D(uDistortTex, vUV).r ;
+  vec4 color = vec4(vUV.x, vUV.y, abs(sin(uTime)), 1.0);
 
-
-  vec3 color = vec3(0.);
-  // color = vec3(vUV.x, vUV.y, abs(sin(uTime)));
-  vec4 texColor = texture2D(uTex, vUV );
-  // + vec2(disortValue * 0.04, sin(uTime))
-
-  gl_FragColor = texColor;
+  gl_FragColor = color;
 }

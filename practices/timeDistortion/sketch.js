@@ -30,7 +30,8 @@ function setup() {
 }
 
 function draw() {
-  myShader.setUniform('uTime', frameCount * 0.01)
 
+  myShader.setUniform('uTime', frameCount * 0.01)
+  console.log(frameCount * 0.01)
   rect(0, 0, width, height)
 }

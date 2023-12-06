@@ -21,17 +21,17 @@ function setup() {
     WEBGL
   )
 
-  // 把圖片當作參數傳給 shader
   shader(myShader)
-
-  myShader.setUniform('uTex', img)
-  myShader.setUniform('uDistortTex', distortTex)
-  myShader.setUniform('uResolution', [width, height])
 }
 
 function draw() {
-
+  // uniform 變數每一幀都要設定進去傳送給 shader
+  myShader.setUniform('uTex', img)
+  myShader.setUniform('uDistortTex', distortTex)
   myShader.setUniform('uTime', frameCount * 0.01)
-  console.log(frameCount * 0.01)
   rect(0, 0, width, height)
+}
+
+function windowResized() {
+  resizeCanvas(width, height)
 }

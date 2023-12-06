@@ -5,33 +5,19 @@ precision mediump float;
 
 varying vec2 vUV;
 
-
-// 圖片
+// 底圖
 uniform sampler2D uTex;
+
+// 擾動材料圖
 uniform sampler2D uDistortTex;
 
 // 每幀時間
 uniform float uTime;
 
-// 整體寬高
-uniform vec2 uResolution;
-
 void main() {
+  float tmpY = fract(vUV.y + uTime*0.1);
+  float distortValue = texture2D(uDistortTex, vec2(vUV.x, tmpY)).r;
+  vec4 texColor = texture2D(uTex, vUV + vec2(distortValue * 0.04, 0.0));
 
-  float timer = mod(uTime, 1.0);
-
-  float tempUVx = mod(vUV.x + uTime,1.0);
-
-  vec4 texColor = texture2D(uTex, vec2(tempUVx, vUV.y));
-
-  //vec4 color = vec4(tempUV.x, tempUV.y, 0.0, 1.0);
-
-  //color = vec4(colorR, texColor.g, 1.0, texColor.a);
-  // gl_FragColor.a = 1.0;
-  // gl_FragColor.b = color.b;
-  // gl_FragColor.r = texColor.r;
-  // gl_FragColor.g = color.g;
-
-  gl_FragColor= texColor;
-
+  gl_FragColor = texColor;
 }

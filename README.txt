@@ -1,1 +1,1 @@
-[Demo](https://yomonlin.github.io/p5practice/ "Demo")
+[Demo](https://yomonlin.github.io/p5practice/)
